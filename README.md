@@ -130,7 +130,7 @@ sudo reboot
     cd create_ap
     sudo make install
     
-    源无法连接，[下载本站备份文件]（https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP/create_ap.rar）
+    源无法连接，[下载本站备份文件](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP)
 
 # 5. (!!!) 禁用 wpa_supplican 
 
