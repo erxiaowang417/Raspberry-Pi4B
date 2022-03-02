@@ -108,7 +108,7 @@ sudo reboot
 
 四、创建ap
 =======
-3b/4b 自带wif，结合create_ap实现创建2.4g/5g wifi，此软件作者已停止维护，详情目录[详情目录](https://github.com/erxiaowang417/ql/tree/main/bilibili) 
+3b/4b 自带wif，结合create_ap实现创建2.4g/5g wifi，此软件作者已停止维护，详情目录[详情目录](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP) 
 
 # 1. 安装 network-manager
 
@@ -129,6 +129,8 @@ sudo reboot
     sudo git clone https://github.com/oblique/create_ap
     cd create_ap
     sudo make install
+    
+    源无法连接，[下载本站备份文件]（https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP/create_ap.rar）
 
 # 5. (!!!) 禁用 wpa_supplican 
 
