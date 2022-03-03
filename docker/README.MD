@@ -45,12 +45,44 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 
 ### 4-3 重启docker服务
 
-
     sudo systemctl restart docker
 
+# 5. Docker 图形化界面
+### 5-1 下载 Docker 图形化界面 portainer
+    sudo docker pull portainer/portainer
+### 5-2 创建 portainer 容器
+    sudo docker volume create portainer_data
+### 5-3 运行 portaine
+    sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+    
+此时可通过以下地址访问
 
+    ip:9000 访问
+    
+ # 6. Cockpit Web 控制台
+ 
+ sudo apt install cockpit
+安装过程将负责设置和启动服务。你可以使用 systemctl 命令来验证状态：
 
+    systemctl status cockpit.socket
+    
+-----------------------------------------------------------------------------------------
+    ● cockpit.socket - Cockpit Web Service Socket
+         Loaded: loaded (/lib/systemd/system/cockpit.socket; enabled; vendor preset: enabled)
+         Active: active (listening) since Sun 2022-02-27 09:41:57 GMT; 1min 26s ago
+       Triggers: ● cockpit.service
+           Docs: man:cockpit-ws(8)
+         Listen: [::]:9090 (Stream)
+          Tasks: 0 (limit: 4165)
+            CPU: 28ms
+         CGroup: /system.slice/cockpit.socket
+-----------------------------------------------------------------------------------------
 
+此时可通过以下地址访问
+
+    ip:9000 访问
+    
+ # 7. openwrt
 
 
 
