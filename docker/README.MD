@@ -53,6 +53,7 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 ### 5-2 创建 portainer 容器
     sudo docker volume create portainer_data
 ### 5-3 运行 portaine
+
     sudo docker run -d -p 9000:9000 --name portainer --restart always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
     
 此时可通过以下地址访问
@@ -61,7 +62,12 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
     
  # 6. Cockpit Web 控制台
  
- sudo apt install cockpit
+ Cockpit是一个Web控制台，具有易于使用的基于Web的界面，使您可以在服务器上执行管理任务。它也是一个Web控制台，它意味着您也可以通过移动设备访问它。
+ 
+ 安装命令
+ 
+    sudo apt install cockpit
+ 
 安装过程将负责设置和启动服务。你可以使用 systemctl 命令来验证状态：
 
     systemctl status cockpit.socket
