@@ -1,1 +1,57 @@
-asd
+docker 安装
+=======
+Docker 是一个开源的应用容器引擎，可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口，容器性能开销极低。这对树莓派非常有用，本教程将介绍 Docker 这个工具以及如何在 Raspbian 上安装 Docker。详情目录[详情目录](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/docker) 
+
+# 1.  打开网卡混杂模式
+
+    sudo ip link set eth0 promisc on 
+  
+# 2. 安装docker
+
+选择脚本安装
+ 
+    sudo curl -sSL https://get.docker.com | sh
+  
+# 3. 创建网络
+
+    sudo docker network create -d macvlan \
+        --subnet=192.168.1.0/24  \                          #路由地址
+        --gateway=192.168.1.1 \                             #路由网关
+        -o parent=eth0 \
+        -o macvlan_mode=bridge \
+        my_eda
+ 
+ docker 网络操作
+ 
+    docker network ls                                       #查看命令      
+    docker network  connect  [net] [container]              #连接
+    eg. docker network  connect my_eda  openwrt
+
+    docker network  disconnect  [net] [container]           #断开连接
+    docker network inspect [net]                            #查看详情 
+    eg. docker network inspect  my_eda    
+
+# 4. docker 基本配置
+
+### 4-1 创建docker用户组
+
+    sudo groupadd docker
+   
+### 4-2 应用用户加入docker用户组
+
+ 
+    sudo usermod -aG docker ${USER}
+    
+
+### 4-3 重启docker服务
+
+
+    sudo systemctl restart docker
+
+
+
+
+
+
+
+
