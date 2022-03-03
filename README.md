@@ -118,12 +118,12 @@ sudo reboot
 3b/4b 自带wif，结合create_ap实现创建2.4g/5g wifi，此软件作者已停止维护，请点击跳转目录[详情目录](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP) 
 关键流程简介：
     
-- 1. 安装 network-manager
-- 2. 安装依赖  
-- 3. 安装 git    
-- 4. 克隆 git 项目
+-  安装 network-manager
+-  安装依赖  
+-  安装 git    
+-  克隆 git 项目
 若源无法连接，下载本站[备份文件](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP/create_ap.rar)
-- 5. (!!!) 禁用 wpa_supplican 
-- 6. 启用热点
-- 7. 开机运行 
+-  (!!!) 禁用 wpa_supplican 
+-  启用热点
+-  开机运行 
 
