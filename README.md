@@ -1,5 +1,10 @@
 # Raspberry-Pi4B
-Raspberry Pi4B 官方系统 配置ap/docker等
+Raspberry Pi4B 官方系统 基础配置增加一些功能例ap/docker等
+
+集成功能
+
+- AP
+- docker
 
 一、下载官方镜像
 ======
@@ -42,25 +47,27 @@ Raspberry Pi OS 64 位（Raspbian）
 
 ## 2.1 区域配置
 
-### raspi-config
+### raspi-config 
 
     sudo raspi-config 
 
 - 选择 5 Localisation Options ，回车
 
 - 进入配置的二级界面后，选择 L1 Locale ，回车。
-- 首先在这个界面上通过键盘方向键或者鼠标滚动那个 Locales to be generated: 区域，直到找到 zh_CN.UTF-8 UTF-8 ，然后按 空格键 进行选中，选中效果是会出现一个 “*” 号。完成选择请回车。
-
-- 这时会出现下图的“设置系统的默认本地环境”的界面，这里我选择的是 en_US.UTF-8
-
-- 然后在这个界面上，按动键盘的“右箭头”按键，选中 <OK> ，回车，树莓派会回到终端里，界面中会出现几行配置过程信息，不用管，直接等待它配置完成即可，然后就会回到一开始的配置界面了。
-
+- 通过键盘方向键 Locales to be generated: 区域，找到 zh_CN.UTF-8 UTF-8 ， 空格键 进行选中，选中效果是会出现一个 “*” 号。完成选择请回车。
+- 选择 en_US.UTF-8
+- 键盘的“右箭头”按键，选中 <OK> ，回车，树莓派会回到终端里，界面中会出现几行配置过程信息，直接等待它配置完成即可，然后就会回到一开始的配置界面了。
 - 连续按两下“右箭头”按键，选中<Finish> ，回车。
-
 - 如果是第一次配置，应该会让你重启，直接按照提示指引重启就行了。
-等待差不多1分钟吧，再使用ssh方式登录到树莓派上即可。
+    
 
-## 2.2 配置固定ip
+## 2.2 配置时间（非必）
+
+    sudo dpkg -reconfigure tzdata 
+    
+    asia(亚洲)->shanghai
+    
+## 2.3 配置固定ip
 
     sudo vi /etc/dhcpcd.conf 
    
@@ -79,7 +86,7 @@ eg.
     static domain_name_servers=114.114.114.114 8.8.8.8 
 
 
-## 2.3 必要工具
+## 2.4 必要工具
 
 ### 先更新apt源（可以换清华大学或者中科大源）
 sudo vi /etc/apt/sources.list
