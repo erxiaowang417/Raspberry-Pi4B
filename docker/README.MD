@@ -60,35 +60,8 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 
     ip:9000 访问
     
- # 6. Cockpit Web 控制台
- 
- Cockpit是一个Web控制台，具有易于使用的基于Web的界面，使您可以在服务器上执行管理任务。它也是一个Web控制台，它意味着您也可以通过移动设备访问它。
- 
- 安装命令
- 
-    sudo apt install cockpit
- 
-安装过程将负责设置和启动服务。你可以使用 systemctl 命令来验证状态：
-
-    systemctl status cockpit.socket
     
------------------------------------------------------------------------------------------
-    ● cockpit.socket - Cockpit Web Service Socket
-         Loaded: loaded (/lib/systemd/system/cockpit.socket; enabled; vendor preset: enabled)
-         Active: active (listening) since Sun 2022-02-27 09:41:57 GMT; 1min 26s ago
-       Triggers: ● cockpit.service
-           Docs: man:cockpit-ws(8)
-         Listen: [::]:9090 (Stream)
-          Tasks: 0 (limit: 4165)
-            CPU: 28ms
-         CGroup: /system.slice/cockpit.socket
------------------------------------------------------------------------------------------
-
-此时可通过以下地址访问
-
-    ip:9000 访问
-    
- # 7. openwrt
+ # 6. openwrt
 
 
 
