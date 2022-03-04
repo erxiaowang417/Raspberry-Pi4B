@@ -103,3 +103,35 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
             option ifname 'tun0'
             option proto 'none'
 ----------------------------------------
+
+### 6-3 重启网络并检查（docker openwrt 内）
+
+   /etc/init.d/network restar               #重启openwrt的网络
+    ip addr                                 #检查网络设置
+    exit                                    #退出docker里的openwrt的ssh
+    
+  ### 6-4 解决树莓派网卡重启后的混杂丢失问题(end)
+  
+  添加一下信息
+  
+    sudo vi /etc/dhcpcd.conf
+  
+------------------------------------------------------------------------
+#去掉注释部分根据需求更改
+
+//#Example static IP configuration:
+interface eth0
+static ip_address=192.168.3.189/24
+#static ip6_address=fd51:42f8:caae:d92e::ff/64
+static routers=192.168.3.1
+static domain_name_servers=192.168.3.1
+#最后添加
+auto macvlan
+iface macvlan inet static
+ address 10.10.30.212 
+ netmask 255.255.255.0
+ gateway 10.10.30.1                                             #路由器 IP
+ dns-nameservers 10.10.30.1                                     #路由器 IP
+ pre-up ip link add macvlan link eth0 type macvlan mode bridge
+ post-down ip link del macvlan link eth0 type macvlan mode bridge
+------------------------------------------------------------------------
