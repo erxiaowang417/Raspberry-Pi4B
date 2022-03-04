@@ -95,8 +95,8 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
             option proto 'static'
             option netmask '255.255.255.0'
             option ipaddr '10.10.30.212'                #这里 不与eth0相同
-            option gateway '10.10.30.1'                 #这里 gate
-            option dns '10.10.30.1'                     #这里 
+            option gateway '10.10.30.211'                 #这里 gate
+            option dns '10.10.30.211'                     #这里 
 #以下无需更改
 
     config interface 'vpn0'
@@ -105,12 +105,13 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 ----------------------------------------
 
 ### 6-3 重启网络并检查（docker openwrt 内）
+docker openwrt 内
 
-   /etc/init.d/network restar               #重启openwrt的网络
+   /etc/init.d/network restart              #重启openwrt的网络
     ip addr                                 #检查网络设置
     exit                                    #退出docker里的openwrt的ssh
     
-  ### 6-4 解决树莓派网卡重启后的混杂丢失问题(end)
+ ### 6-4 解决树莓派网卡重启后的混杂丢失问题(end)
   
   添加一下信息
   
@@ -129,8 +130,8 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
     iface macvlan inet static
      address 10.10.30.212 
      netmask 255.255.255.0
-     gateway 10.10.30.1                    #路由器 IP
-     dns-nameservers 10.10.30.1            #路由器 IP
+     gateway 10.10.30.211                    #路由器 IP
+     dns-nameservers 10.10.30.211            #路由器 IP
      pre-up ip link add macvlan link eth0 type macvlan mode bridge
      post-down ip link del macvlan link eth0 type macvlan mode bridge
  
