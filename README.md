@@ -77,7 +77,9 @@ Raspberry Pi OS 64 位（Raspbian）
     asia(亚洲)->shanghai
     
 ## 2.4 配置固定ip
+两种方案，一 来自于官方发布配置静态ip，二来自于网友分享.由于公司路由器复杂，经常获取到两个ip，故改用第二种
 
+### 2.4.1 方案一
     sudo vi /etc/dhcpcd.conf 
    
 interface eth0
@@ -93,7 +95,10 @@ eg.
     static ip6_address=fd51:42f8:caae:d92e::ff/64
     static routers=10.10.30.1           
     static domain_name_servers=114.114.114.114 8.8.8.8 
+    
+### 2.4.2 方案二(！！！)
 
+192.168.137.8 设置网线ip【不设置会自动分配】 设置网线固定ip方法 在 boot启动盘下 有个cmdline.txt 最前边加一句 ip= xxx.xxx.xxx.xxx    
 
 ## 2.4 必要工具
 
