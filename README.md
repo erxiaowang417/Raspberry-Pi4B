@@ -60,14 +60,23 @@ Raspberry Pi OS 64 位（Raspbian）
 - 连续按两下“右箭头”按键，选中<Finish> ，回车。
 - 如果是第一次配置，应该会让你重启，直接按照提示指引重启就行了。
     
-
-## 2.2 配置时间（非必）
+## 2.2 配置键盘
+ 
+树莓派(raspberry pi)是英国产品，默认键盘布局是英国(GB)，我们用的键盘布局一般是美国(US)的(104键)
+    
+- 终端输入sudo raspi-config，进入树莓派设置，选择5 localistation Option
+- 选择I3 Change Keyboard Layout
+- Generic 104-key PC
+- Other ->English (US)
+- 其余默认
+    
+## 2.3 配置时间（非必）
 
     sudo dpkg -reconfigure tzdata 
     
     asia(亚洲)->shanghai
     
-## 2.3 配置固定ip
+## 2.4 配置固定ip
 
     sudo vi /etc/dhcpcd.conf 
    
