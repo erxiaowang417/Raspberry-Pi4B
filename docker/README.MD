@@ -107,7 +107,7 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 ### 6-3 重启网络并检查（docker openwrt 内）
 docker openwrt 内
 
-   /etc/init.d/network restart              #重启openwrt的网络
+    /etc/init.d/network restart              #重启openwrt的网络
     ip addr                                 #检查网络设置
     exit                                    #退出docker里的openwrt的ssh
     
