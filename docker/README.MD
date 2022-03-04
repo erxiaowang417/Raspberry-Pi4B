@@ -117,7 +117,6 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
     sudo vi /etc/dhcpcd.conf
   
 ------------------------------------------------------------------------
-#去掉注释部分根据需求更改
 
 //#Example static IP configuration:
 interface eth0
@@ -134,4 +133,5 @@ iface macvlan inet static
  dns-nameservers 10.10.30.1                                     #路由器 IP
  pre-up ip link add macvlan link eth0 type macvlan mode bridge
  post-down ip link del macvlan link eth0 type macvlan mode bridge
+ 
 ------------------------------------------------------------------------
