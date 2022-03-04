@@ -48,7 +48,7 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
     sudo systemctl restart docker
 
 # 5. Docker 图形化界面
-### 5-1 下载 Docker 图形化界面 portainer
+### 5-1 拉取 Docker 图形化界面 portainer
     sudo docker pull portainer/portainer
 ### 5-2 创建 portainer 容器
     sudo docker volume create portainer_data
@@ -63,6 +63,43 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
     
  # 6. openwrt
 
+### 6-1 拉取 openwrt 镜像
 
+    sudo docker pull sulinggg/openwrt:rpi4 
+### 6-2 创建/启动容器
 
+    sudo docker run --restart always --name openwrt  -d --network my_eda --privileged sulinggg/openwrt:rpi4  /sbin/init
+    
+### 6-2 进入容器并修改相关参数
 
+    sudo docker exec -it openwrt bash               #进入openwrt 容器的SSH
+
+    vi  /etc/config/network                         #修改openwrt网络设置 
+
+----------------------------------------
+#以下无需更改
+
+    config interface 'loopback'
+            option ifname 'lo'
+            option proto 'static'
+            option ipaddr '127.0.0.1'
+            option netmask '255.0.0.0'
+#以下无需更改
+
+    config globals 'globals'
+#根据需求更改
+
+    config interface 'lan'
+            option type 'bridge'
+            option ifname 'eth0'        
+            option proto 'static'
+            option netmask '255.255.255.0'
+            option ipaddr '10.10.30.212'                #这里 不与eth0相同
+            option gateway '10.10.30.1'                 #这里 gate
+            option dns '10.10.30.1'                     #这里 
+#以下无需更改
+
+    config interface 'vpn0'
+            option ifname 'tun0'
+            option proto 'none'
+----------------------------------------
