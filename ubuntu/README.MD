@@ -161,8 +161,11 @@ nameserver 223.6.6.6
     sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf  
     
  五、安装docker
- =======   
-
+ ======= 
+ Docker Desktop 可帮助您在 Mac 和 Windows 上轻松构建、共享和运行容器，就像在 Linux 上一样。Docker 处理复杂的设置并允许您专注于编写代码。
+ 
+     curl -fsSL https://get.docker.com -o get-docker.sh
+     DRY_RUN=1 sh ./get-docker.sh
     
 六、[安装docker](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/docker/README.MD)
 =======    
