@@ -65,8 +65,19 @@ Ubuntu Server 20.04.4 LTS 64 位
 
 sudo vi /etc/netplan/50-cloud-init.yaml
 
+    network:
+       ethernets:
+          eth0:
+             dhcp4: no
+             addresses: [192.168.3.211/24]      #ip
+             gateway: 192.168.3.1
+             nameservers:
+                addresses: [114.114.114.114, 8.7.7.7]
+             optional: true 
 
-
+生效命令
+     
+     netplan apply
 
 ## 2.4 必要工具
 
