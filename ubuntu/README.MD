@@ -63,10 +63,10 @@ Ubuntu Server 20.04.4 LTS 64 位
     
 ## 2.3 配置固定ip
 
-    
-### 2.4.2 方案二(！！！)
+sudo vi /etc/netplan/50-cloud-init.yaml
 
-192.168.137.8 设置网线ip【不设置会自动分配】 设置网线固定ip方法 在 boot启动盘下 有个cmdline.txt 最前边加一句 ip= xxx.xxx.xxx.xxx    
+
+
 
 ## 2.4 必要工具
 
@@ -97,17 +97,48 @@ sudo reboot
 
 四、[创建ap](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/AP/README.MD)
 =======
-3b/4b 自带wif，结合create_ap实现创建2.4g/5g wifi，此软件作者已停止维护，请点击跳转目录[详情目录](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP) 
-关键流程简介：
+3b/4b 自带wif，使用hostapd配置2.4g 和 5g wifi：
     
--  安装 network-manager
--  安装依赖  
--  安装 git    
--  克隆 git 项目
-若源无法连接，下载本站[备份文件](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/AP/create_ap.rar)
--  (!!!) 禁用 wpa_supplican 
--  启用热点
--  开机运行 
+###  安装服务
+  
+    sudo apt install hostapd dnsmasq bridge-utils
+    
+### 配置文件
+
+    vi /etc/hostapd/hostapd.conf
+    
+    # 指定网卡
+    interface=wlan0
+    # 上面创建的bridge
+    bridge=brlan
+    # "g" simply means 2.4GHz band
+    hw_mode=g
+    # a是5Ghz 的wifi
+    #hw_mode=a
+    # wifi频段
+    channel=6
+    # limit the frequencies used to those allowed in the country
+    ieee80211d=1
+    # 地区码 这里我填AU
+    country_code=AU 
+    # 802.11n support
+    ieee80211n=1
+    # 802.11ac support
+    ieee80211ac=1
+    # QoS support, also required for full speed on 802.11n/ac/ax
+    wmm_enabled=1
+
+    # wifi名称
+    ssid=RASPNET_wlan0
+    # 1=wpa, 2=wep, 3=both
+    auth_algs=1
+    # WPA2 only
+    wpa=2
+    wpa_key_mgmt=WPA-PSK
+    rsn_pairwise=CCMP
+    #密码
+    wpa_passphrase=12345678
+
     
  五、树莓派安装Cockpit Web 控制台  
  =======   
