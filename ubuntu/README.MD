@@ -70,7 +70,7 @@ sudo vi /etc/netplan/50-cloud-init.yaml
           eth0:
              dhcp4: no
              addresses: [192.168.3.211/24]      #ip
-             gateway: 192.168.3.1
+             gateway4: 192.168.3.1
              nameservers:
                 addresses: [114.114.114.114, 8.7.7.7]
              optional: true 
@@ -101,9 +101,16 @@ deb http://mirrors.tuna.tsinghua.edu.cn/raspberrypi/ bullseye main
 
 建议更新 Raspbian，包括核心和固件，然后重启系统：
 
-sudo apt-get update
-sudo apt-get dist-upgrade
-sudo reboot
+sudo apt update
+### 禁用ubuntu自带的dns服务
+sudo systemctl stop systemd-resolved.service
+sudo systemctl mask systemd-resolved.service
+### 删除默认的dns文件
+sudo unlink /etc/resolv.conf
+sudo nano /etc/resolv.conf
+### 打开resolv.conf，添加以下dns
+nameserver 223.5.5.5
+nameserver 223.6.6.6
 
 
 四、[创建ap](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/AP/README.MD)
@@ -151,35 +158,11 @@ sudo reboot
     wpa_passphrase=12345678
 
     开启wifi
-    sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf /etc/hostapd/hostapd_wlan1.conf 
+    sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf  
     
- 五、树莓派安装Cockpit Web 控制台  
+ 五、安装docker
  =======   
- Cockpit是一个Web控制台，具有易于使用的基于Web的界面，使您可以在服务器上执行管理任务。它也是一个Web控制台，它意味着您也可以通过移动设备访问它。
- 
- 安装命令
- 
-    sudo apt install cockpit
- 
-安装过程将负责设置和启动服务。你可以使用 systemctl 命令来验证状态：
 
-    systemctl status cockpit.socket
-    
------------------------------------------------------------------------------------------
-    ● cockpit.socket - Cockpit Web Service Socket
-         Loaded: loaded (/lib/systemd/system/cockpit.socket; enabled; vendor preset: enabled)
-         Active: active (listening) since Sun 2022-02-27 09:41:57 GMT; 1min 26s ago
-       Triggers: ● cockpit.service
-           Docs: man:cockpit-ws(8)
-         Listen: [::]:9090 (Stream)
-          Tasks: 0 (limit: 4165)
-            CPU: 28ms
-         CGroup: /system.slice/cockpit.socket
------------------------------------------------------------------------------------------
-
-此时可通过以下地址访问
-
-    ip:9000 访问
     
 六、[安装docker](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/docker/README.MD)
 =======    
