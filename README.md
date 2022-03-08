@@ -14,14 +14,17 @@ Raspberry Pi OS 64 位（Raspbian）
 这个版本是 32 位的系统，仅适用于树莓派 3B 3B+ 3A+ 4B Pi 400 CM3 CM3+ CM4 Zero 2 W
     
     地址：https://shumeipai.nxez.com/download#os
-    [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/README.MD)
+    
+- [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/README.MD)
+
 二、ubuntu 
 ======
 
 在 Raspberry Pi 上运行 Ubuntu 很容易。只需选择您想要的操作系统映像，将其闪存到 microSD 卡上，然后将其加载到您的 Pi 上即可。
 
     地址：https://ubuntu.com/download/raspberry-pi
-    [配置详情跳转连接]https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/ubuntu/README.MD
+    
+- [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/ubuntu/README.MD)
 
 
 
