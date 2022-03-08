@@ -179,4 +179,4 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 - [安装docker](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/docker/README.MD)
 - [创建网络](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/docker/README.MD)
 - docker [基本配置](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/docker/README.MD)
-- [openwrt](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/docker/README.MD)
+
