@@ -164,8 +164,7 @@ nameserver 223.6.6.6
  
  - 编辑 /etc/systemd/system/rc-local.service，没有这个文件就创建一个：
 
-    
-    sudo vi /etc/systemd/system/rc-local.service
+ sudo vi /etc/systemd/system/rc-local.service
 
     [Unit]
     Description=/etc/rc.local Compatibility
@@ -206,6 +205,8 @@ sudo vi /etc/rc.local
     exit 0
 
 - 添加权限，使能服务
+
+指令
 
     sudo chmod +x /etc/rc.local
     sudo systemctl enable rc-local
