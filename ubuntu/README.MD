@@ -139,6 +139,8 @@ sudo reboot
     #密码
     wpa_passphrase=12345678
 
+    开启wifi
+    sudo /usr/sbin/hostapd /etc/hostapd/hostapd.conf /etc/hostapd/hostapd_wlan1.conf 
     
  五、树莓派安装Cockpit Web 控制台  
  =======   
