@@ -57,9 +57,14 @@ Ubuntu Server 20.04.4 LTS 64 位
     
 ## 2.2 配置时间（非必）
 
-    sudo dpkg -reconfigure tzdata 
-    
-    asia(亚洲)->shanghai
+- 查看当前系统时间
+ 
+    date -R
+- 设置命令
+
+    tzselect
+    Asia->china->beijing
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
     
 ## 2.3 配置固定ip
 
