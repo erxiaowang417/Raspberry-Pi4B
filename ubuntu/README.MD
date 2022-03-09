@@ -125,7 +125,11 @@ nameserver 223.6.6.6
 ###  安装服务
   
     sudo apt install hostapd dnsmasq bridge-utils
-    
+### 创建docker bridge（同时也是分享热点bridge）
+
+    //指定一个ip段，ip段不要跟上级路由重合，命名brlan（自定义名字）
+    docker network create -d bridge --subnet=192.168.22.1/24 --gateway=192.168.22.1 -o "com.docker.network.bridge.name=brlan" mybr
+
 ### 配置文件
 
     vi /etc/hostapd/hostapd.conf
