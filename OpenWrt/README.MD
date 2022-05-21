@@ -37,6 +37,7 @@ OpenWrt系统已经对树莓派4b做了更加完善的兼容，目前我在某�
     接受转发
 
 由此，基础配置完成  
+
 三、安装应用配置
 ======
 
@@ -47,4 +48,13 @@ OpenWrt系统已经对树莓派4b做了更加完善的兼容，目前我在某�
     luci-app-vlmcsd
     vlmcsd
 - [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/OpenWrt/kms/readme.md)
+
+## 2.2 docker 
+ 
+-根目录扩容
+-安装docker
+-配置防火墙
+- [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/OpenWrt/docker/readme.md)
+    
+    
 
