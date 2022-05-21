@@ -51,9 +51,13 @@ OpenWrt系统已经对树莓派4b做了更加完善的兼容，目前我在某�
 
 ## 2.2 docker 
  
--根目录扩容
--安装docker
--配置防火墙
+- 根目录扩容
+- 安装docker
+- 配置防火墙
+
+        图形化界面 portainer
+        青龙
+        
 - [配置详情跳转连接](https://github.com/erxiaowang417/Raspberry-Pi4B/tree/main/OpenWrt/docker/readme.md)
     
     
