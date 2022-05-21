@@ -42,8 +42,17 @@
       reboot
       
   重启完成
+#### 2. 安装docker
 
-#### 2. 安装portainer 镜像
+      dockerd
+      luci-app-dockerman
+      
+#### 3. 配置防火墙
+      
+      修改允许转发
+      iptables -t nat -A POSTROUTING -s 172.17.0.0/16 ! -o docker0 -j MASQUERADE
+      
+#### 4. 安装portainer 镜像
     
     # 拉取Docker 图形化界面 portainer
     docker pull portainer/portainer
