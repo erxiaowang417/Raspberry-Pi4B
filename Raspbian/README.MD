@@ -6,7 +6,23 @@ Raspbian 官方系统 基础配置增加一些功能例ap/docker等
 - AP
 - docker
 
-一、下载官方镜像
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>目录</summary>
+  <ol>
+    <li>
+      <a href="#下载官方镜像">系统</a>
+    </li>
+    <li>
+      <a href="#烧录镜像">烧录</a>
+    </li>
+    <li>
+      <a href="#启动树莓派">启动</a>
+    </li>
+  </ol>
+</details>
+
+## 下载官方镜像
 ======
 Raspberry Pi OS 64 位（Raspbian）
 树莓派官方深度定制的硬件驱动与软件程序，官方推荐系统。如果你第一次使用树莓派，请下载这个。
@@ -15,7 +31,7 @@ Raspberry Pi OS 64 位（Raspbian）
     
     地址：https://shumeipai.nxez.com/download#os
     
-二、烧录镜像
+## 烧录镜像
 ======
 
 # 1. 烧写tf卡
@@ -29,7 +45,7 @@ Raspberry Pi OS 64 位（Raspbian）
     
     new-item ssh -type file
    
-三、启动树莓派
+## 启动树莓派
 ======
 
 # 1. 启用root账户
@@ -181,5 +197,6 @@ Docker 是一个开源的应用容器引擎，可以让开发者打包他们的�
 - docker [基本配置](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/docker/README.MD)
 
 六、[USB抓包](https://github.com/erxiaowang417/Raspberry-Pi4B/blob/main/Raspbian/docker/README.MD)
-sudo modprobe usbmon
-sudo wireshark
+
+    sudo modprobe usbmon
+    sudo wireshark
